@@ -173,8 +173,7 @@ WantedBy=multi-user.target
 3）启动服务：
 
 ```
-systemctl start node_exporter && systemctl status node_exporter && systemctl enable
-node_exporter
+systemctl start node_exporter && systemctl status node_exporter && systemctl enable node_exporter
 ```
 
 
@@ -252,8 +251,7 @@ WantedBy=multi-user.target
 3）启动服务：
 
 ```
-systemctl start mysqld_exporter && systemctl status mysqld_exporter && systemctl enable
-mysqld_exporter
+systemctl start mysqld_exporter && systemctl status mysqld_exporter && systemctl enable mysqld_exporter
 ```
 
 7、在prometheus.yml文件的scrape_configs模块中追加：
