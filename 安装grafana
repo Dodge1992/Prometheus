@@ -1,8 +1,0 @@
-一、使用rpm包安装grafana：
-1、下载rpm包：wget https://dl.grafana.com/oss/release/grafana-6.7.1-1.x86_64.rpm
-
-2、安装：yum install grafana-6.7.1-1.x86_64.rpm
-
-3、启动：systemctl daemon-reload  &&  systemctl start grafana-server  &&  systemctl status grafana-server
-
-4、在浏览器输入：ip:3000（grafana默认端口3000），查看
