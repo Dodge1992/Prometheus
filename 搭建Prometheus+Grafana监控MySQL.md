@@ -3,7 +3,7 @@
 1、关闭firewalld：
 
 ```
-systemctl stop firewalld  &&  systemctl disable firewalld
+systemctl stop firewalld  &&  systemctl disable firewalld && sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 ```
 
 
