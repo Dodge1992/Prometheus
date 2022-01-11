@@ -210,7 +210,7 @@ flush privileges;
 [client]
 
 user=prometheus
-password=123456
+password=12a4B56!
 ```
 
 5、启动：
@@ -234,15 +234,28 @@ chown -R prometheus:prometheus /usr/local/mysqld_exporter
 ```
 # cat /usr/lib/systemd/system/mysqld_exporter.service
 
-[Unit]
-Description=mysqld_exporter
-After=network.target
-
 [Service]
 Type=simple
 User=prometheus
-ExecStart=/usr/local/mysqld_exporter/mysqld_exporter --config.my-cnf=/usr/local/mysqld_exporter/.my.cnf
 Restart=on-failure
+ExecStart=/usr/local/mysqld_exporter/mysqld_exporter --config.my-cnf=/usr/local/mysqld_exporter/.my.cnf \
+--collect.global_status \
+--collect.info_schema.innodb_metrics \
+--collect.auto_increment.columns \
+--collect.info_schema.processlist \
+--collect.binlog_size \
+--collect.info_schema.tablestats \
+--collect.global_variables \
+--collect.info_schema.query_response_time \
+--collect.info_schema.userstats \
+--collect.info_schema.tables \
+--collect.perf_schema.tablelocks \
+--collect.perf_schema.file_events \
+--collect.perf_schema.eventswaits \
+--collect.perf_schema.indexiowaits \
+--collect.perf_schema.tableiowaits \
+--collect.slave_status \
+--web.listen-address=0.0.0.0:9104
 
 [Install]
 WantedBy=multi-user.target
@@ -252,6 +265,12 @@ WantedBy=multi-user.target
 
 ```
 systemctl start mysqld_exporter && systemctl status mysqld_exporter && systemctl enable mysqld_exporter
+```
+
+4）测试：
+
+```
+curl 127.0.0.1:9104/metrics | wc -l
 ```
 
 7、在prometheus.yml文件的scrape_configs模块中追加：
