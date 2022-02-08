@@ -1,4 +1,4 @@
-# clickhouse监控
+# Clickhouse监控
 
 
 
@@ -20,5 +20,6 @@
 
 ```
 1、https://blog.csdn.net/ActionTech/article/details/108512429
+2、https://zhuanlan.zhihu.com/p/268857326
 ```
 

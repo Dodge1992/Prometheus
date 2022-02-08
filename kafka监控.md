@@ -11,7 +11,7 @@ wget https://github.com/danielqsj/kafka_exporter/releases/download/v1.2.0/kafka_
 #### 2、解压：
 
 ```
-tar -zxvf kafka_exporter-1.2.0.linux-amd64.tar.gz -C /usr/local/ && mv kafka_exporter-1.2.0.linux-amd64 kafka_exporter
+tar -zxvf kafka_exporter-1.2.0.linux-amd64.tar.gz -C /usr/local/ && mv /usr/local/kafka_exporter-1.2.0.linux-amd64 /usr/local/kafka_exporter
 ```
 
 #### 3、创建日志文件：
@@ -94,5 +94,6 @@ systemctl enable kafka_exporter && systemctl start kafka_exporter && systemctl s
 ```
 1、https://cloud.tencent.com/developer/article/1658936
 2、https://blog.csdn.net/x763795151/article/details/119705372
+3、https://www.confluent.io/blog/monitor-kafka-clusters-with-prometheus-grafana-and-confluent/
 ```
 
