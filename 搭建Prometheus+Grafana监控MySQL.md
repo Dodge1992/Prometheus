@@ -299,5 +299,7 @@ systemctl start mysqld_exporter && systemctl status mysqld_exporter && systemctl
 2、https://www.jianshu.com/p/8d2c020313f0
 3、https://blog.csdn.net/qq292913477/article/details/85625242
 4、https://www.sohu.com/a/383302760_411876
+5、https://www.heguang-tech.com/blog/2020/api-gateway/monitoring/mysql/
+6、https://www.cnblogs.com/miaocbin/p/15262098.html
 ```
 
